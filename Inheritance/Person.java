@@ -1,9 +1,9 @@
 package Inheritance;
 
 public class Person {
-  protected String myName;
-  protected int myAge;
-  protected String myGender;
+  protected String myName; //name of the person
+  protected int myAge; //person's age
+  protected String myGender; //"M" fpr male, "F" for female
   
   public Person(String name, int age, String gender) {
     this.myName = name;
@@ -31,6 +31,6 @@ public class Person {
   }
 
   public String toString() {
-    return "Name: " + this.myName + ", Age: " + this.myAge  + ", Gender: " + this.myGender;  }
+    return "Name: " + myName + ", Age: " + myAge  + ", Gender: " + myGender;  }
   
 }
