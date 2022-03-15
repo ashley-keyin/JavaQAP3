@@ -48,6 +48,12 @@ public class Ellipse extends Shape {
     double area = Math.PI * a * b;
     return area;
   }
+    // Method for applying a scale factor
+    @Override
+    public void scale(int factor) {
+        this.a = this.a * factor;
+        this.b = this.b * factor;
+    }
   
   public String toString() {
     return super.toString() + "\n" + "Major Axis = " + this.a + ", Minor Axis = " + this.b;

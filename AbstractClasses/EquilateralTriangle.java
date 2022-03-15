@@ -25,6 +25,11 @@ public class EquilateralTriangle extends Shape {
     double perimeter = side + side + side;
     return perimeter;
   }
+    // Method for applying a scale factor
+    @Override
+    public void scale(int factor) {
+        this.side = this.side * factor;
+    }
 
   public String toString(){
     return super.toString() + "\n" + "Sides = " + this.side;

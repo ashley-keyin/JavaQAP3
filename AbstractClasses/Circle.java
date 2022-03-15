@@ -1,5 +1,6 @@
 package AbstractClasses;
 
+
 public class Circle extends Shape {
   private double radius;
 
@@ -27,6 +28,11 @@ public class Circle extends Shape {
   @Override
   public double getPerimeter() {
     return 2 * Math.PI * radius;
+  }
+
+  @Override
+  public void scale(int factor) {
+      this.radius = this.radius * factor;
   }
 
   public String toString() {
