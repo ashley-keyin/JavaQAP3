@@ -1,30 +1,24 @@
 package AbstractClasses;
 
-public class Ellipse {
-  protected double radius;
-  protected double a; //major axes
-  protected double b; //minor axes 
+public class Ellipse extends Shape {
+  //The ellipse class has a major and minor axes a and b, respectively. 
+  private double a; //major axes
+  private double b; //minor axes 
   
   public Ellipse() {
-  }
-
-  public Ellipse(double radius) {
-    this.radius = radius;
-  }
-
-  public Ellipse(String name, double radius, double a, double b) {
     super();
-    this.radius = radius;
-    this.a = a;
-    this.b = b;
   }
 
-  public double getRadius() {
-    return radius;
+  public Ellipse(String name, double majorA, double minorB) {
+    super(name);
+    if (majorA > minorB) {
+      this.a = majorA;
+      this.b = minorB;
+  } else {
+      this.a = minorB;
+      this.b = majorA;
   }
-
-  public void setRadius(double radius) {
-    this.radius = radius;
+    
   }
 
   public double getA() {
@@ -42,20 +36,20 @@ public class Ellipse {
     this.b = b;
   }
 
+  @Override
   //[Note that if a = b = r, then P = 2πr]
   public double getPerimeter() {
-    double perimeter = (double)2 * Math.PI * Math.sqrt((a * a + b * b) / (2 * 1.0));
+    double perimeter = Math.PI * Math.sqrt(2*(a * a + b * b) - ((a-b)*(a-b)) /2 );
     return perimeter;
   }
 
+  @Override
   public double getArea() {
     double area = Math.PI * a * b;
     return area;
   }
-
-  @Override
-  public String toString() {
-    return super.toString() + " Radius = " + this.radius + " Perimeter = " + getPerimeter() + " Area = " + getArea();
-  }
   
+  public String toString() {
+    return super.toString() + "\n" + "Major Axis = " + this.a + ", Minor Axis = " + this.b;
+  }
 }

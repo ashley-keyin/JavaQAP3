@@ -6,7 +6,6 @@ public abstract class Shape {
   public Shape(){
 
   }
-
   public Shape(String name) {
     this.name = name;
   }
@@ -21,9 +20,11 @@ public abstract class Shape {
   public abstract double getPerimeter();
 
   public String toString() {
-    return "Shape = " + this.name;
+    String roundedP = String.format("%.1f", getPerimeter());
+    String roundedA = String.format("%.1f", getArea());
+    return "\n" + "Shape = " + name + "\n" + "Perimeter = " + roundedP + "\n" + "Area = " + roundedA;
   }
 
-  }
+}
   
 
